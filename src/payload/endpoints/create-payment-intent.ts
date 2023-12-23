@@ -37,6 +37,12 @@ export const createPaymentIntent: PayloadHandler = async (req, res): Promise<voi
       const customer = await stripe.customers.create({
         email: fullUser?.email,
         name: fullUser?.name,
+        address: {
+          line1: '61 Executive Blvd',
+          city: 'New York',
+          postal_code:'11735',
+          country: 'US',
+        },
       })
 
       stripeCustomerID = customer.id
@@ -96,8 +102,18 @@ export const createPaymentIntent: PayloadHandler = async (req, res): Promise<voi
     const paymentIntent = await stripe.paymentIntents.create({
       customer: stripeCustomerID,
       amount: total,
-      currency: 'usd',
+      currency: 'inr',
       payment_method_types: ['card'],
+      description: 'Product description for export transactions',
+      shipping: { // Include shipping information here
+        name: fullUser?.name,
+        address: { // Include address information here
+          line1: '61 Executive Blvd',
+          city: 'New York',
+          postal_code: '11735',
+          country: 'US',
+        },
+      },
     })
 
     res.send({ client_secret: paymentIntent.client_secret })
