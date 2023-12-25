@@ -1187,6 +1187,8 @@
 
 "@payloadcms/plugin-stripe@^0.0.19":
   version "0.0.19"
+  resolved "https://registry.npmjs.org/@payloadcms/plugin-stripe/-/plugin-stripe-0.0.19.tgz"
+  integrity sha512-5eB2ae38dDEUfVgWs5qkB3feQuuYV8t5R0Jn4qhNPBx11sdxhPGVcNyrK3KJizUSIkt/B9T9q31PfWBc0NT7kA==
   dependencies:
     "@types/uuid" "^9.0.0"
     lodash.get "^4.4.2"
