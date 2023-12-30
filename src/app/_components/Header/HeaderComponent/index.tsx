@@ -1,5 +1,4 @@
-
-"use client"
+'use client'
 
 import React from 'react'
 import { Header } from '../../../../payload/payload-types'
@@ -15,7 +14,7 @@ import { noHeaderFooterUrls } from '../../../constants'
 import { usePathname } from 'next/navigation'
 
 const HeaderComponent = ({ header }: { header: Header }) => {
-  const pathname = usePathname();
+  const pathname = usePathname()
 
   return (
     <nav
@@ -26,7 +25,7 @@ const HeaderComponent = ({ header }: { header: Header }) => {
       <Gutter className={classes.wrap}>
         <Link href="/">
           <Image src="/logo-black.svg" alt="logo" width={170} height={50} />
-        </Link> 
+        </Link>
 
         <HeaderNav header={header} />
       </Gutter>
@@ -34,5 +33,4 @@ const HeaderComponent = ({ header }: { header: Header }) => {
   )
 }
 
-export default HeaderComponent;
-
+export default HeaderComponent
