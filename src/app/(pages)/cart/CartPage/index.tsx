@@ -82,7 +82,7 @@ export const CartPage: React.FC<{
                       const metaImage = meta?.image
 
                       return (
-                        <CartItem
+                        <CartItem 
                           product={product}
                           title={title}
                           metaImage={metaImage}
