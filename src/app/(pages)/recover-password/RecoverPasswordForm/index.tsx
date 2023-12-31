@@ -67,7 +67,7 @@ export const RecoverPasswordForm: React.FC = () => {
               label="Recover Password"
               className={classes.submit}
             />
-          </form>  
+          </form>
         </React.Fragment>
       )}
       {success && (

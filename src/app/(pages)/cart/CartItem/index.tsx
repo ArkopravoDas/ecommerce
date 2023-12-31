@@ -88,4 +88,3 @@ const CartItem = ({ product, title, metaImage, qty, addItemToCart }) => {
 }
 
 export default CartItem
-

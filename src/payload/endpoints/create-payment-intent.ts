@@ -40,7 +40,7 @@ export const createPaymentIntent: PayloadHandler = async (req, res): Promise<voi
         address: {
           line1: '61 Executive Blvd',
           city: 'New York',
-          postal_code:'11735',
+          postal_code: '11735',
           country: 'US',
         },
       })
@@ -105,9 +105,11 @@ export const createPaymentIntent: PayloadHandler = async (req, res): Promise<voi
       currency: 'inr',
       payment_method_types: ['card'],
       description: 'Product description for export transactions',
-      shipping: { // Include shipping information here
+      shipping: {
+        // Include shipping information here
         name: fullUser?.name,
-        address: { // Include address information here
+        address: {
+          // Include address information here
           line1: '61 Executive Blvd',
           city: 'New York',
           postal_code: '11735',

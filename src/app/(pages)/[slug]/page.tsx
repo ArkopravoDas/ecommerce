@@ -37,7 +37,7 @@ export default async function Page({ params: { slug = 'home' } }) {
       draft: isDraftMode,
     })
 
-    categories = await fetchDocs<Category>('categories');
+    categories = await fetchDocs<Category>('categories')
   } catch (error) {
     // when deploying this template on Payload Cloud, this page needs to build before the APIs are live
     // so swallow the error here and simply render the page with fallback data where necessary
@@ -64,10 +64,10 @@ export default async function Page({ params: { slug = 'home' } }) {
         <section>
           <Hero {...hero} />
           <Gutter className={classes.home}>
-            <Categories categories={categories}/>
+            <Categories categories={categories} />
             <Promotion />
           </Gutter>
-        </section> 
+        </section>
       ) : (
         <>
           <Hero {...hero} />

@@ -2,20 +2,19 @@
 
 import React from 'react'
 
-import classes from "./index.module.scss";
-import { inclusions, noHeaderFooterUrls } from '../../../constants';
-import { usePathname } from 'next/navigation';
-import Image from 'next/image';
-import { Gutter } from '../../Gutter';
-import Link from 'next/link';
-import { Footer, Media } from '../../../../payload/payload-types';
-import { Button } from '../../Button';
-
+import classes from './index.module.scss'
+import { inclusions, noHeaderFooterUrls } from '../../../constants'
+import { usePathname } from 'next/navigation'
+import Image from 'next/image'
+import { Gutter } from '../../Gutter'
+import Link from 'next/link'
+import { Footer, Media } from '../../../../payload/payload-types'
+import { Button } from '../../Button'
 
 const FooterComponent = ({ footer }: { footer: Footer }) => {
-  const pathname = usePathname();
+  const pathname = usePathname()
 
-  const navItems = footer?.navItems || [];
+  const navItems = footer?.navItems || []
 
   return (
     <footer className={noHeaderFooterUrls.includes(pathname) ? classes.hide : ''}>
@@ -23,7 +22,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
         <ul className={classes.inclusions}>
           {inclusions.map(inclusion => (
             <li key={inclusion.title}>
-              <Image 
+              <Image
                 src={inclusion.icon}
                 alt={inclusion.title}
                 width={36}
@@ -48,8 +47,8 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
             <p>{footer.copyright}</p>
 
             <div className={classes.socialLinks}>
-              {navItems.map((item) => {
-                const icon = item?.link?.icon as Media;
+              {navItems.map(item => {
+                const icon = item?.link?.icon as Media
 
                 return (
                   <Button
@@ -78,4 +77,3 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
 }
 
 export default FooterComponent
-
